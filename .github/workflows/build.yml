@@ -1,0 +1,13 @@
+name: build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: ./support/build/_docker/heroku-22.Dockerfile
+
+    steps:
+      - run: bob build php-8.2.2
